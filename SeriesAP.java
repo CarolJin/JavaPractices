@@ -1,4 +1,4 @@
-package realPractices;
+package default package;
 
 /*Given the first 2 terms A and B of an Arithmetic Series, tell the Nth term of the series. 
 

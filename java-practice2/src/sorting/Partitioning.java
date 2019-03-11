@@ -2,9 +2,14 @@ package sorting;
 
 import java.util.Arrays;
 
-//The Quick Sort is normally the fastest sorting algorithm
+//When we partition data we are dividing it into
+//two parts. All items with data above a defined value
+//will go in one part and the rest will go in the other
 
-public class QuickSort {
+//The value that defines in which group data will go
+//is known as the pivot value
+
+public class Partitioning {
 
 	private static int[] theArray;
 
@@ -12,74 +17,53 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 
-		QuickSort theSort = new QuickSort(10);
+		Partitioning partitionArray = new Partitioning(10);
 
-		theSort.generateRandomArray();
+		partitionArray.generateRandomArray();
 
-		System.out.println(Arrays.toString(QuickSort.theArray));
+		System.out.println(Arrays.toString(Partitioning.theArray));
 
-		theSort.quickSort(0, 9);
+		// Every item smaller than 35 will be on the left and
+		// everything bigger will be on the right
 
-		System.out.println(Arrays.toString(QuickSort.theArray));
+		partitionArray.partitionArray(35);
 
-	}
-
-	QuickSort(int newArraySize) {
-
-		arraySize = newArraySize;
-
-		theArray = new int[arraySize];
-
-		generateRandomArray();
+		System.out.println(Arrays.toString(Partitioning.theArray));
 
 	}
 
-	public void quickSort(int left, int right) {
+	public void partitionArray(int pivot) {
 
-		if (right - left <= 0)
-			return; // Everything is sorted
+		// If leftPointer finds an item that is greater
+		// than pivot it stops and waits for the rightPointer
+		// to find a value less than pivot. Then the items
+		// are switched
 
-		else {
+		// Starts at the left side of array before index 0
 
-			// It doesn't matter what the pivot is, but it must
-			// be a value in the array
+		int leftPointer = -1;
 
-			int pivot = theArray[right];
+		// Starts at the right side of the array after the last index
 
-			System.out.println("Value in right " + theArray[right]
-					+ " is made the pivot");
-
-			System.out.println("left = " + left + " right= " + right
-					+ " pivot= " + pivot + " sent to be partitioned");
-
-			int pivotLocation = partitionArray(left, right, pivot);
-
-			System.out.println("Value in left " + theArray[left]
-					+ " is made the pivot");
-
-			quickSort(left, pivotLocation - 1); // Sorts the left side
-
-			quickSort(pivotLocation + 1, right);
-
-		}
-
-	}
-
-	public int partitionArray(int left, int right, int pivot) {
-
-		int leftPointer = left - 1;
-
-		int rightPointer = right;
+		int rightPointer = arraySize;
 
 		while (true) {
 
-			while (theArray[++leftPointer] < pivot)
+			// Cycle through array until the end is reached
+			// or an item bigger than pivot is found. Then
+			// wait for rightPointer to finish cycling
+
+			while (leftPointer < (arraySize - 1)
+					&& theArray[++leftPointer] < pivot)
 				;
 
 			printHorzArray(leftPointer, rightPointer);
 
 			System.out.println(theArray[leftPointer] + " in index "
 					+ leftPointer + " is bigger than the pivot value " + pivot);
+
+			// Cycle through array until the beginning is reached
+			// or an item smaller than pivot is found.
 
 			while (rightPointer > 0 && theArray[--rightPointer] > pivot)
 				;
@@ -92,15 +76,15 @@ public class QuickSort {
 
 			printHorzArray(leftPointer, rightPointer);
 
-			if (leftPointer >= rightPointer) {
+			// When the 2 pointers meet at the middle break
+			// out of the while loop
 
-				System.out.println("left is >= right so start again");
-
+			if (leftPointer >= rightPointer)
 				break;
 
-			}
-
 			else {
+
+				// Swap the values in the pointers
 
 				swapValues(leftPointer, rightPointer);
 
@@ -111,10 +95,6 @@ public class QuickSort {
 
 		}
 
-		swapValues(leftPointer, right);
-
-		return leftPointer;
-
 	}
 
 	public void swapValues(int indexOne, int indexTwo) {
@@ -122,6 +102,16 @@ public class QuickSort {
 		int temp = theArray[indexOne];
 		theArray[indexOne] = theArray[indexTwo];
 		theArray[indexTwo] = temp;
+
+	}
+
+	Partitioning(int newArraySize) {
+
+		arraySize = newArraySize;
+
+		theArray = new int[arraySize];
+
+		generateRandomArray();
 
 	}
 
@@ -175,21 +165,21 @@ public class QuickSort {
 
 			// Number of spaces to put before the F
 
-			int spacesBeforeFront = 6 * (i + 1) - 5;
+			int spacesBeforeFront = 5 * i + 1;
 
 			for (int k = 0; k < spacesBeforeFront; k++)
 				System.out.print(" ");
 
-			System.out.print("L" + i);
+			System.out.print("L");
 
 			// Number of spaces to put before the R
 
-			int spacesBeforeRear = 5 * (j + 1) - spacesBeforeFront;
+			int spacesBeforeRear = (5 * j + 1 - 1) - spacesBeforeFront;
 
 			for (int l = 0; l < spacesBeforeRear; l++)
 				System.out.print(" ");
 
-			System.out.print("R" + j);
+			System.out.print("H");
 
 			System.out.println("\n");
 
