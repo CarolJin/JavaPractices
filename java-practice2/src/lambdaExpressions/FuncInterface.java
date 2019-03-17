@@ -1,7 +1,6 @@
 package lambdaExpressions;
 
-//A sample functional interface (An interface with 
-//single abstract method
+//A sample functional interface (An interface with single abstract method
 public interface FuncInterface {
 	// An abstract function 
     void abstractFun(int x); 

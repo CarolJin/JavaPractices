@@ -6,7 +6,6 @@ import java.util.function.BiFunction;
 
 
 public class Postfix {
-	public class ReversePolishNotation {
 		 
 	    public Double calc(String input) {
 	        Stack<Double> numbers = new Stack<>();
@@ -35,7 +34,5 @@ public class Postfix {
 	        numbers.push(operation.apply(numbers.pop(), numbers.pop()));
 	        return numbers;
 	    }
-	 
-	}
 	 
 }

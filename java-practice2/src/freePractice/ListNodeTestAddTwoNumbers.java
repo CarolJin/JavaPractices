@@ -1,7 +1,7 @@
 package freePractice;
 
 
-public class AddTwoNumbers {
+public class ListNodeTestAddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 	    int carry = 0;
 	    ListNode p, dummy = new ListNode(0);
@@ -28,7 +28,7 @@ public class AddTwoNumbers {
 		ListNode l2= new ListNode(5);
 		l2.next= new ListNode(6);
 		l2.next.next= new ListNode(4);
-		AddTwoNumbers result = new AddTwoNumbers();
+		ListNodeTestAddTwoNumbers result = new ListNodeTestAddTwoNumbers();
 		ListNode rn = result.addTwoNumbers(l1,l2);
 		while(rn.next!=null){
 		 System.out.print("the result is "+ rn.next.toString());

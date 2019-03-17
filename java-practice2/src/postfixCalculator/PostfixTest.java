@@ -6,6 +6,7 @@ import java.util.Stack;
 import java.util.stream.IntStream;
 
 import static org.hamcrest.MatcherAssert.*;
+import static org.junit.Assert.*;
 
 /*
 In reverse Polish notation the operators follow their operands;
@@ -24,8 +25,9 @@ public class PostfixTest {
     public void calcSignShouldReturnStackWithTwoElementsPoppedAndOneElementPushed() {
         Stack<Double> numbers = new Stack<>();
         IntStream.rangeClosed(1, 5).forEach(number -> numbers.add((double) number));
-        Stack<Double> actual = calcSign(numbers, (num1, num2) -> num2 / num1);
-        assertThat(actual.size(), is(equals(4)));
+        Postfix pf = new Postfix();
+        Stack<Double> actual = pf.calcSign(numbers, (num1, num2) -> num2 / num1);
+        assertEquals(actual.size(), 4);
     }
 
 }
