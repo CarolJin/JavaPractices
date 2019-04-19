@@ -30,7 +30,7 @@ public class longestNoOverlappingSubStringShoppers {
 
 		// Save every same characters from start - end as interval
 		for (int i = 0; i < n; i++) {
-			for (int j = n - 1; j >= i; j--) {
+			for (int j = n - 1; j >= i; j--) { //Need '=' here to handle non-repeat characters!
 				if (inputList.get(i).equals(inputList.get(j))) {
 					start = i;
 					end = j;
