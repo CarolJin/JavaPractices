@@ -1,22 +1,9 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-/*
- * 1. Same shopper must be in the same list
- * 2. Any letters in between the two same letters have to in the same list too
- * Input: ababcbacadefegdehijhklij
- * Output: 
- * a - a: a,b,c => ababcbaca (9)
- * d - d: d, e, f, g => defegde (7)
- * h -h, j - j: h, j, i, k, l => hijhklij (8)
- */
-
 public class longestNoOverlappingSubStringShoppers {
 	
 	public static void main(String[] args) {
-		String str = "ababcbacadefegdehijhklij";
-		char[] characters = str.toCharArray();
+		String str1 = "ababcbacadefegdehijhklij";
+		String str2 = "abcd";
+		char[] characters = str1.toCharArray();
 		List<Character> inputList = new ArrayList<Character>();
 		for (int i = 0; i < characters.length; i++) {
 			inputList.add(characters[i]);
@@ -43,7 +30,7 @@ public class longestNoOverlappingSubStringShoppers {
 
 		// Save every same characters from start - end as interval
 		for (int i = 0; i < n; i++) {
-			for (int j = n - 1; j > i; j--) {
+			for (int j = n - 1; j >= i; j--) {
 				if (inputList.get(i).equals(inputList.get(j))) {
 					start = i;
 					end = j;
