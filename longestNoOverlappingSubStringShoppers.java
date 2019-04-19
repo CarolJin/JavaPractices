@@ -40,17 +40,7 @@ public class longestNoOverlappingSubStringShoppers {
 			}
 		}
 
-		/*
-		 * for (int i = 0; i < newList.size()-1; i++) { int newStart=0; int
-		 * newEnd=0; int j = i+1; while(j < newList.size()-1) {
-		 * if(newList.get(i).end > newList.get(j).end && newList.get(i).start <
-		 * newList.get(j).start) { newList.remove(j); j=j+1; } else if
-		 * (newList.get(i).end > newList.get(j).start) { newStart =
-		 * Math.min(newList.get(i).start, newList.get(j).start); newEnd =
-		 * Math.max(newList.get(i).end, newList.get(i+1).end); } int length =
-		 * newEnd - newStart + 1; output.add(length); } }
-		 */
-		List<Interval> results = merge(newList);
+		List<Interval> results = merge(newList);  //merge & reduce the overlapping intervals
 		for (Interval i : results) {
 			int length = i.end - i.start + 1;
 			output.add(length);
