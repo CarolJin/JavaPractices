@@ -57,8 +57,7 @@ public class longestNoOverlappingSubStringShoppers {
 		int end = intervals.get(0).end;
 
 		for (Interval interval : intervals) {
-			if (interval.start <= end) // Overlapping intervals, move the end if
-										// needed
+			if (interval.start <= end) // Overlapping intervals, move the end if needed
 				end = Math.max(end, interval.end);
 			else { // Disjoint intervals, add the previous one and reset bounds
 				result.add(new Interval(start, end));
