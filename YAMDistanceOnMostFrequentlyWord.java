@@ -4,6 +4,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+/*
+*Custom made problem: Calculate the YAM distance for an array of words
+*Definition: the YAM distance of an array of words is defined as the max distance between any of the most frequently appearing words
+*Example: a) [this is a funny problem created just for the sake of illustration this is not a real problem this is just a test] -- in this case the YAM distance = the index of the second problem - the index of the first problem
+*Example: b) [no duplicate words can be found here] -- in this case the YAM distance is 0, since all words have the same frequency and the max distance for a single word itself is 0.
+*/
+
 public class YAMDistanceOnMostFrequentlyWord {
 
 	public static void main(String[] args) {
