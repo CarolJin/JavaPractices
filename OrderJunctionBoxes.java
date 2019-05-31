@@ -90,3 +90,14 @@ public class OrderJunctionBoxes {
 	}
 	
 }
+
+//Actual output:
+/*
+Ordered junction boxes: 
+[[236] cat dog rabbit snake]
+[[09z] cat hamster]
+[az0 first qpx]
+[eo first qpx]
+[ykc 82 01]
+[06f 12 25 6]
+*/
