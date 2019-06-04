@@ -1,11 +1,11 @@
 package binarySearch;
 
-public class CapacityToShipAllWithinDdays0 {
+public class CapacityToShipAllWithinDdays1 {
 	public static void main(String[] args) {
 		int[] weights = {1,2,3,4,5,6,7,8,9,10};
 		int D = 3;
 		
-		CapacityToShipAllWithinDdays0 ca = new CapacityToShipAllWithinDdays0();
+		CapacityToShipAllWithinDdays1 ca = new CapacityToShipAllWithinDdays1();
 		int capacity = ca.shipWithinDays(weights, D);
 		System.out.println(capacity);
 	}
