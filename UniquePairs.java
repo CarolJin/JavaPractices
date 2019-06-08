@@ -22,23 +22,26 @@ import java.util.Set;
 
 class UniquePairs {
 	public static void main(String[] args) {
-		int[] arr = {10, 11, 15, 18, 12, 29, 31, 45, 50, 19, 51};       
+		int[] arr = { 10, 11, 15, 18, 12, 29, 31, 45, 50, 19, 51 };
 
-		List<Interval> results = getUniquePairs(arr);
+		List<Pair> results = getUniquePairs(arr);
 
-		results.forEach(itv -> System.out.printf("[%d %d] ", itv.start, itv.end));
+		// results.forEach(itv -> System.out.printf("[%d %d] ", itv.start,
+		// itv.end));
+		for (Pair p : results)
+			System.out.print(p.toString());
 
 	}
 
-	public static ArrayList<Interval> getUniquePairs(int[] arr) {
-        
-        HashMap<Integer, ArrayList<Interval>> hm = new HashMap<>();
-		ArrayList<Interval> al = new ArrayList<Interval>();
-        
-        if(arr.length<2) {
-           System.out.println("Lack of array element..");
-           return al;
-        }
+	public static ArrayList<Pair> getUniquePairs(int[] arr) {
+
+		HashMap<Integer, ArrayList<Pair>> hm = new HashMap<>();
+		ArrayList<Pair> al = new ArrayList<Pair>();
+
+		if (arr.length < 2) {
+			System.out.println("Lack of array element..");
+			return al;
+		}
 
 		for (int i = 0; i < arr.length - 1; i++) {
 			int j = i + 1;
@@ -46,12 +49,12 @@ class UniquePairs {
 				if (arr[j] >= arr[i]) {
 					int distance = arr[j] - arr[i];
 					if (!hm.containsKey(distance)) {
-						al = new ArrayList<Interval>();
+						al = new ArrayList<Pair>();
 					} else {
 						al = hm.get(distance);
 					}
 
-					Interval it = new Interval(arr[i], arr[j]);
+					Pair it = new Pair(arr[i], arr[j]);
 					al.add(it);
 					hm.put(distance, al);
 				}
@@ -69,8 +72,8 @@ class UniquePairs {
 			if (key < min)
 				min = key;
 		}
-        
-        if(hm.isEmpty()) {
+
+		if (hm.isEmpty()) {
 			System.out.println("No valid pairs..");
 			return al;
 		}
@@ -79,19 +82,24 @@ class UniquePairs {
 
 }
 
-class Intervall {
+class Pair {
 	int start;
 	int end;
 
-	Intervall() {
+	Pair() {
 		start = 0;
 		end = 0;
 	}
 
-	Intervall(int s, int e) {
+	Pair(int s, int e) {
 		start = s;
 		end = e;
 	}
+
+	public String toString() {
+		return String.format("(%d %d) ", start, end);
+	}
+
 }
 
 
