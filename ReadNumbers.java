@@ -15,23 +15,20 @@ public class ReadNumbers {
 	static String output = "";
 	
 	public static void main(String[] args) {		
-		String input = "12333441";
+		String input = "13332214";
 		System.out.println(readNumbers(input));
 	}
 
 	private static String readNumbers(String input) {		
 		if(input.length()==0) System.out.println("The input is empty.");;
 		
-		char[] charArr = input.toCharArray();
-		int[] numArr = new int[charArr.length];
-		for(int i = 0; i<charArr.length; i++) {
-			Character c = charArr[i];
-			try {
-				Integer number = Integer.parseInt(c.toString());
+		int[] numArr = new int[input.length()];
+		for(int i = 0; i<input.length(); i++) {
+			Character c = input.charAt(i);
+			if(Character.isDigit(c)){
+				int number = Integer.parseInt(c.toString());
 				numArr[i] = number;
-			}catch(Exception e) {
-				System.out.println("The input is not valid numbers.");
-			}			
+			}
 		}
 		 int i =0;
 		 while (i<numArr.length) {
@@ -46,7 +43,7 @@ public class ReadNumbers {
 			}
 			i=j;
 			int count = end -start+1;
-			output = new String(output + getTranslationOfCount(count) + number);
+			output = new String(output + getTranslationOfCount(count) + " " + number + " ");
 		}
 		
 		return output;
@@ -65,10 +62,11 @@ public class ReadNumbers {
 			numTrans = "three";
 			break;
 		case 4:
-			numTrans = "one";
+			numTrans = "four";
 			break;
 		}
 		return numTrans;
 	}
 
 }
+
