@@ -78,7 +78,7 @@ public class SuperDigit {
 
         sum*=k;
 
-       return superDigit(new Long(sum).toString(),1);
+       return superDigit(new Long(sum).toString(),1);  //Long.toString(sum);
 
     }
 
