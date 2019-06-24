@@ -2,6 +2,7 @@ package backtrack;
 
 import java.util.ArrayList;
 
+//Runtime: 2 ms, Memory Usage: 34.5 MB
 public class PermutationSequence {
 
 	public static void main(String[] args) {
