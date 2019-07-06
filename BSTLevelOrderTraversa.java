@@ -8,28 +8,23 @@ class Node{
         left=right=null;
     }
 }
-public class BSTLevelOrderTraversa {
+class Solution{
 
 static void levelOrder(Node root){
       if(root == null) return;
 
-      Queue<Node> queue = new LinkedList<Node>();
-      queue.add(root);
+      Queue<Node> qu = new LinkedList<Node>();
+      qu.add(root);
 
-      bfs(root, queue);
-      
-    }
-
-static void bfs(Node node, Queue<Node> qu) {
-        while(!qu.isEmpty()) {
+      while(!qu.isEmpty()) {
           Node curr = qu.poll();
           System.out.print(curr.data + " ");
           if(curr.left!=null) qu.add(curr.left);
           if(curr.right!=null) qu.add(curr.right);
         }
+     
+    }
 
-        if(qu.isEmpty()) return;
-}
 
 public static Node insert(Node root,int data){
         if(root==null){
