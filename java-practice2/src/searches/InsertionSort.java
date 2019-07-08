@@ -24,3 +24,39 @@ public class InsertionSort {
 		}
 	}
 }
+
+/*
+package searches;
+
+public class InsertionSort2 {
+
+	static void insertionSort(int n, int[] arr) {
+		for (int i = 1; i < n; i++) {
+			int j = i-1;
+			int toInsert = arr[i];
+			while (j >= 0 && arr[j] > toInsert) {
+				arr[j + 1] = arr[j];
+				printArray(arr);
+				j--;
+			}
+			arr[j+1] = toInsert;
+		}
+		printArray(arr);
+	}
+
+	static void printArray(int[] arr) {
+		for (int a : arr)
+			System.out.print(a + " ");
+		System.out.print("\n");
+	}
+
+	public static void main(String[] args) {
+		int n = 10;
+		int[] arr = {2,3,4,5,6,7,8,9,10,1};
+		
+		insertionSort(n, arr);
+	}
+
+}
+
+*/
