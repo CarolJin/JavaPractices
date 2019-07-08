@@ -52,6 +52,46 @@ public static  Node insert(Node head,int data)
 }
 */
 
+//Remove dup from sorted LinkedList	
+public static Node removeDuplicates(Node head) {
+        if(head!=null) {
+            Node current = head;
+            while(current.next!=null) {
+                if(current.data==current.next.data){
+                    current.next = current.next.next;
+                }
+                else {
+                    current = current.next;
+                }
+            }
+            return head;
+        }
+      return null;
+ }
+
+//Remove dup from unsorted LL
+public static void removeDuplicate2(node head)  
+    { 
+        HashSet<Integer> hs = new HashSet<>(); 
+
+        node current = head; 
+        node prev = null; 
+        while (current != null)  
+        { 
+            int curval = current.val; 
+              
+            if (hs.contains(curval)) { 
+                prev.next = current.next; 
+            } else { 
+                hs.add(curval); 
+                prev = current; 
+            } 
+            current = current.next; 
+        } 
+  
+    } 
+	
+
 	public static void display(Node head) {
         Node start = head;
         while(start != null) {
