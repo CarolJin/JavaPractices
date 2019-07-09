@@ -69,16 +69,10 @@ public class OrderJunctionBoxes {
 				}
 			}
 			
-			for (Entry<String, TreeSet<String>> entry : tm.entrySet()) {
-				if(entry.getValue().size()==1) {
-					String pureHead = entry.getValue().toString().replaceAll("\\(.*\\)", "");
-					output[index++] = pureHead +  " " + entry.getKey(); 
-				}				
-				else {
+			for (Entry<String, TreeSet<String>> entry : tm.entrySet()) {				
 					TreeSet<String> ts = entry.getValue();
 					for(String t: ts) {
-						output[index++] = t +  " " + entry.getKey(); 
-					}					
+						output[index++] = t +  " " + entry.getKey(); 				
 				}
 			}
 	            			
