@@ -71,3 +71,24 @@ public class DeepestNodes_DFS {
 	}
 	
 }
+
+class Node1 {
+	int val;
+	Node1 left, right;
+	
+	public Node1(int val) {
+		this.val = val;
+		left = null;
+		right = null;
+	}
+}
+
+class Data {
+	Node1 node;
+	int depth;
+	
+	public Data(Node1 node, int depth) {
+		this.node=node;
+		this.depth=depth;
+	}
+}
