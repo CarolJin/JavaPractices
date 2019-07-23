@@ -4,7 +4,6 @@ import java.util.*;
 
 public class printLongestCommonSubsequence {
 
-    // Complete the longestCommonSubsequence function below.
     static int[] longestCommonSubsequence(int[] a, int[] b) {
         if(a.length==0 || b.length==0) return new int[0];
 
