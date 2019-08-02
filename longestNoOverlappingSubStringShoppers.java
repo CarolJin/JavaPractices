@@ -1,3 +1,22 @@
+/* 
+Example: ababcbacadefegdehijhklij
+
+Rules: 
+1. a shopper must be shown in the same list, cannot see a same letter in 2 list
+2. All the letters in between the 2 same letters have to be in the same list too
+
+Analysis: 
+a - a: a, b, c  are in between
+d - d: d, e, f, g are in between
+h - h, j - j & they're overlapping: so h, i, j, k, l are in between
+
+So output:
+
+ababcbaca - 9
+defegde - 7
+hijhklij -8
+*/
+
 public class longestNoOverlappingSubStringShoppers {
 	
 	public static void main(String[] args) {
