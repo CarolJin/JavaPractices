@@ -71,3 +71,5 @@ public class CalculateLength {
 }
 
 //Make sure the first newLen of nums are without the `val`: [0,1,2,2,3,0,4,2], 2 => [0,1,4,0,3,0,4,2], first `newLen` elements are: 0,1,4,0,3
+
+
