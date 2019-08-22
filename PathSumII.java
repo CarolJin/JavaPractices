@@ -14,7 +14,7 @@ public class PathSumII {
 		
 		int sum = 25;
 
-		PathSum dp = new PathSum();
+		PathSumII dp = new PathSumII();
 		System.out.println("The paths of given sum from the tree are: " + dp.pathSum(root, sum));
 
 	}
