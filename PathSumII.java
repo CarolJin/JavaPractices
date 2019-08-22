@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathSum {
+public class PathSumII {
 
 	public static void main(String args[]) {
 		TreeNode root = new TreeNode(1);
