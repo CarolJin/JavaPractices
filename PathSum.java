@@ -1,6 +1,6 @@
 //Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
 
-public class PathSum1 {
+public class PathSum {
 
 	public static void main(String[] args) {
 		// [5,4,8,11,null,13,4,7,2,null,null,null,1] 22
@@ -19,7 +19,7 @@ public class PathSum1 {
 
 		int sum = 0;
 
-		PathSum1 dp = new PathSum1();
+		PathSum dp = new PathSum();
 		System.out.println("The given sum from the tree: " + dp.hasPathSum(root, sum));
 
 	}
